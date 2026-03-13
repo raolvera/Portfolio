@@ -1,0 +1,235 @@
+/* You can add custom CSS and extend Bootstrap styles in this file. Remember, Bootstrap is just CSS at the end of the day! */
+/*Google Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap");
+
+/* Global Styles */
+body {
+  background-color: #09122c;
+  color: white;
+}
+
+/*Header Style */
+h1,
+h2 {
+  font-family: "Wallpoet", serif;
+  font-size: 2.8rem;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+h5 {
+  font-family: "Wallpoet", serif;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+/*Paragraph Style */
+p {
+  font-family: "Coda", sans-serif;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+/*Nav Bar Style*/
+.navbar-brand,
+.navbar-nav .nav-link {
+  font-family: "Coda", sans-serif;
+  font-size: 1.5rem;
+}
+
+.navbar-brand i {
+  font-size: 2rem;
+}
+
+/*Hero Section - Keep Image Size but Zoom on Smaller Screens */
+#hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(252, 252, 252);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+/*Set Background Image & Enable Zoom Effect */
+#hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("img/hero_img.jpg") no-repeat center center;
+  background-size: cover;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+/*Add Dark Overlay */
+#hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.533);
+  z-index: -1;
+}
+
+/* Hero Content Style */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Headshot Style*/
+.hero-headshot {
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgba(26, 26, 26, 0.229);
+  margin-bottom: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  background: rgba(0, 0, 0, 0.365);
+  margin-top: 30px;
+}
+
+.hero-headshot:hover {
+  transform: scale(1.1);
+  border-color: darkblue;
+}
+
+/*Skills Style */
+#skills-section {
+  color: white;
+}
+
+#skills-section img {
+  max-width: 180px;
+  height: auto;
+}
+
+/*Carousel Style*/
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  padding: 10px;
+}
+
+.carousel-inner img {
+  max-height: 635px;
+  width: auto;
+  object-fit: contain;
+}
+
+/*Contact Style*/
+#contact-section .bi {
+  color: #ffffff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+#contact-section .bi:hover {
+  color: #0020ee;
+}
+.btn-primary {
+    background-color: #333; /* Replace with your desired color */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    cursor: pointer; /* Pointer cursor */
+  }
+  
+  .btn-primary:active {
+    background-color: #003f7f; /* Even darker shade on click */
+    transform: scale(0.95); /* Slightly shrink on click */
+  }
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+/*Enable Hero Image Zoom Effect on Smaller Screens */
+@media (max-width: 576px) {
+  #hero-section::before {
+    transform: scale(1.6);
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem;
+  }
+
+  .hero-headshot {
+    width: 150px;
+    height: 150px;
+  }
+
+  h1,
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero-section::before {
+    transform: scale(1.4);
+  }
+
+  .hero-headshot {
+    width: 175px;
+    height: 175px;
+  }
+
+  h1,
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #hero-section::before {
+    transform: scale(1.2);
+  }
+
+  .hero-headshot {
+    width: 190px;
+    height: 190px;
+  }
+
+  h1,
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
